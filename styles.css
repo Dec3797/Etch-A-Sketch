@@ -8,7 +8,6 @@ div {
     height: 50px;
     border: solid 1px;
     box-sizing: border-box;
-    flex: 1;
 }
 
 #container {
@@ -17,4 +16,5 @@ div {
     height: 800px;
     flex-wrap: wrap;
     flex: 1;
+    margin: 100px;
 }
