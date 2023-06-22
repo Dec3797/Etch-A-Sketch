@@ -1,5 +1,4 @@
 const container = document.querySelector('#container')
-const colourBackground = document.querySelectorAll('.grid')
 
 
 function createGrid(){
@@ -7,19 +6,28 @@ function createGrid(){
         const grid = document.createElement('div');
         grid.classList.add('grid')
         container.appendChild(grid)
+        grid.addEventListener('mouseover', function(){
+            grid.style.backgroundColor = 'black'
+        })
     }
 }
 
-function randomNumberGenerator(min, max){
-    return Math.floor(Math.random() * (max + 1))
-}
 
-function randomColourGenerator(min, max){
+
+//function to get random number up to 255 for RGB colours.
+/*function randomNumberGenerator(rgb){
+    return Math.floor(Math.random() * (rgb + 1))
+}*/
+
+//function to pick the random colour.
+/*function randomColourGenerator(){
     let red = randomNumberGenerator(0, 255);
     let green = randomNumberGenerator (0, 255);
     let blue = randomNumberGenerator (0, 255);
-    return [red, green, blue]
-}
+    return `rgb ${[red, green, blue]}`
+}*/
+
+
 
 createGrid()
 
