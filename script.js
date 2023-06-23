@@ -1,4 +1,5 @@
 const container = document.querySelector('#container')
+const resizeButton = document.querySelector('#resize')
 
 
 function createGrid(){
@@ -11,6 +12,8 @@ function createGrid(){
         })
     }
 }
+
+
 
 
 
