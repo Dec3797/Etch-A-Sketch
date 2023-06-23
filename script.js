@@ -6,6 +6,8 @@ function createGrid(){
     for (let i =  1; i <= 256; i++){
         const grid = document.createElement('div');
         grid.classList.add('grid')
+        grid.style.height = '50px';
+        grid.style.width = '50px'
         container.appendChild(grid)
         grid.addEventListener('mouseover', function(){
             grid.style.backgroundColor = 'black'
@@ -13,6 +15,29 @@ function createGrid(){
     }
 }
 
+
+resizeButton.addEventListener('click', function(){
+    squareAmount = prompt('How many squares squared would you like your grid?', '')
+    if (squareAmount >= 100 || squareAmount < 10){
+    return 'Please enter a number between 10 to 99';
+    } else if (!squareAmount){
+    return 'How many squares squared would you like your grid?'
+    } else {
+    for (let i = 1; i <= (squareAmount * squareAmount); i++){
+        const grid = document.createElement('div');
+        grid.classList.add('grid')
+        grid.style.height = `${squareAmount * 3.125}px`;
+        grid.style.width = `${squareAmount * 3.125}px`;
+        container.appendChild(grid)
+        grid.addEventListener('mouseover', function(){
+            grid.style.backgroundColor = 'black';
+    })
+    }
+    }
+})
+
+
+createGrid()
 
 
 
@@ -30,7 +55,4 @@ function createGrid(){
     return `rgb ${[red, green, blue]}`
 }*/
 
-
-
-createGrid()
 
