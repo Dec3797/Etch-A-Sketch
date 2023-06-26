@@ -22,6 +22,17 @@ function clearGrid(){
     });
 }
 
+function updateGrid(){
+    const grid = document.createElement('div');
+        grid.classList.add('grid')
+        grid.style.height = `${squareAmount * 3.125}px`;
+        grid.style.width = `${squareAmount * 3.125}px`;
+        container.appendChild(grid)
+        grid.addEventListener('mouseover', function(){
+            grid.style.backgroundColor = 'black';
+})
+}
+
 resizeButton.addEventListener('click', function(){
     squareAmount = prompt('How many squares squared would you like your grid?', '')
     if (squareAmount >= 100 || squareAmount < 10){
@@ -31,14 +42,7 @@ resizeButton.addEventListener('click', function(){
     } else {
     for (let i = 1; i <= (squareAmount * squareAmount); i++){
         clearGrid();
-        const grid = document.createElement('div');
-        grid.classList.add('grid')
-        grid.style.height = `${squareAmount * 3.125}px`;
-        grid.style.width = `${squareAmount * 3.125}px`;
-        container.appendChild(grid)
-        grid.addEventListener('mouseover', function(){
-            grid.style.backgroundColor = 'black';
-    })
+        updateGrid();
     }
     }
 })
