@@ -25,8 +25,8 @@ function clearGrid(){
 function updateGrid(){
     const grid = document.createElement('div');
         grid.classList.add('grid')
-        grid.style.height = `${squareAmount * 3.125}px`;
-        grid.style.width = `${squareAmount * 3.125}px`;
+        grid.style.height = `${800 / squareAmount}px`;
+        grid.style.width = `${800 / squareAmount}px`;
         container.appendChild(grid)
         grid.addEventListener('mouseover', function(){
             grid.style.backgroundColor = 'black';
@@ -40,8 +40,8 @@ resizeButton.addEventListener('click', function(){
     } else if (!squareAmount){
     createGrid();
     } else {
-    for (let i = 1; i <= (squareAmount * squareAmount); i++){
         clearGrid();
+    for (let i = 1; i <= squareAmount * squareAmount; i++){
         updateGrid();
     }
     }
